@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="@string/welcome"
+            android:textColor="#3F51B5"
+            android:textSize="25sp"
+            android:layout_centerHorizontal="true"
+            tools:layout_editor_absoluteX="109dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="@string/instructions"
+            android:textColor="#3F51B5"
+            android:textSize="25sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/welcome"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="54dp" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="488dp"
+            android:layout_height="48dp"
+            android:hint="@string/prompt_name"
+            android:inputType="textEmailAddress"
+            android:selectAllOnFocus="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/instructions"
+            android:autofillHints="name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="488dp"
+            android:layout_height="48dp"
+            android:hint="@string/prompt_phone"
+            android:imeActionLabel="@string/action_sign_in_short"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:selectAllOnFocus="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/username"
+            android:autofillHints="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/username" />
+
+        <CheckBox
+            android:id="@+id/tyc"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phone"
+            android:text="@string/tyc" />
+
+        <Button
+            android:id="@+id/accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginBottom="64dp"
+            android:enabled="false"
+            android:text="@string/action_accept"
+            android:layout_alignEnd="@+id/phone"
+            android:layout_below="@+id/tyc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginBottom="64dp"
+            android:enabled="false"
+            android:text="@string/action_cancel"
+            android:layout_alignTop="@+id/accept"
+            android:layout_toStartOf="@+id/accept"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
