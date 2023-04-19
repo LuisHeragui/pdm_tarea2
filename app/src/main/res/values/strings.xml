@@ -15,9 +15,13 @@
     <!--Strings para 'formulario_pagina_1-->
     <string name="bulletDescription">Image to use as a bullet point</string>
     <string name="hintQ">Escribe tu respuesta</string>
-    <string name="pregunta1">A qué juego pertenece la estrella depresiva de color azul?</string>
-    <string name="pregunta2">Por qué la Princesa Peach se sorprendió al ver a Mario?</string>
-    <string name="pregunta3">Quién es el personaje más Romático</string>
+    <string name="pregunta1">¿A qué juego pertenece la estrella depresiva de color azul?</string>
+    <string name="pregunta2">¿Por qué la Princesa Peach se sorprendió al ver a Mario?</string>
+    <string name="pregunta3">¿Quién es el personaje más Romántico?</string>
+    <string name="pregunta4">El personaje que aparece en estos BulletPoints es Browser. ¿Es esto cierto?</string>
+    <string name="pregunta5">¿Qué efectos tiene consumir la estrella del poder?</string>
+    <string name="pregunta6">¿Te gustó la película?</string>
+    <string name="hintP4">Presiona para marcar tu respuseta</string>
     <string name="msPeach">Princesa Peach</string>
     <string name="mario">Mario</string>
     <string name="luigi">Luigi</string>
