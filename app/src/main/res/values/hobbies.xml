@@ -1,0 +1,11 @@
+<resources>
+    <string-array name="hobbies_array">
+        <item>Hobby</item>
+        <item>Leer</item>
+        <item>Cantar</item>
+        <item>Jugar videojuegos</item>
+        <item>Hacer ejercicio</item>
+        <item>Estudiar</item>
+        <item>Ver películas o series</item>
+    </string-array>
+</resources>

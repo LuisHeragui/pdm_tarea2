@@ -4,7 +4,7 @@
     <string name="prompt_name">Nombre</string>
     <string name="prompt_phone">Telefono</string>
     <string name="action_accept">Aceptar</string>
-    <string name="action_cancel">Cancelar</string>
+    <string name="action_cancel">Borrar todo</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">¡Bienvenido!</string>
     <string name="instructions">Ingrese sus datos</string>

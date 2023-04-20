@@ -70,11 +70,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username" />
 
+        <Spinner
+            android:id="@+id/hobby"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_below="@+id/phone"
+            ></Spinner>
+
         <CheckBox
             android:id="@+id/tyc"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/phone"
+            android:layout_below="@+id/hobby"
             android:text="@string/tyc" />
 
         <Button
@@ -83,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginBottom="64dp"
-            android:enabled="false"
+            android:enabled="true"
             android:text="@string/action_accept"
             android:layout_alignEnd="@+id/phone"
             android:layout_below="@+id/tyc"
@@ -98,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginBottom="64dp"
-            android:enabled="false"
+            android:enabled="true"
             android:text="@string/action_cancel"
             android:layout_alignTop="@+id/accept"
             android:layout_toStartOf="@+id/accept"
