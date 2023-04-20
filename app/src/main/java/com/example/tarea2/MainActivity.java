@@ -11,7 +11,7 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        boolean verPantalla1 = false;
+        boolean verPantalla1 = true;
 
         if (verPantalla1) {
             // Pantalla 1
