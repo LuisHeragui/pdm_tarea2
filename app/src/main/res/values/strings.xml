@@ -25,4 +25,9 @@
     <string name="msPeach">Princesa Peach</string>
     <string name="mario">Mario</string>
     <string name="luigi">Luigi</string>
+
+    <string name="settings">Configuración</string>
+    <string name="help">Ayuda</string>
+    <string name="bug">Reportar un Bug</string>
+    <string name="share">Compartir</string>
 </resources>

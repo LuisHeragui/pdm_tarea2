@@ -2,16 +2,19 @@ package com.example.tarea2;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class MainActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        boolean verPantalla1 = true;
+        boolean verPantalla1 = false;
 
         if (verPantalla1) {
             // Pantalla 1
@@ -26,5 +29,11 @@ public class MainActivity extends Activity {
             // Pantalla 2
             setContentView(R.layout.formulario_pagina_1);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.fstmenu,menu);
+        return true;
     }
 }

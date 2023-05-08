@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="30dp">
+    android:layout_marginTop="5dp">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -20,13 +21,12 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/pregunta1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:id="@+id/pregunta1"
+                android:orientation="horizontal"
                 tools:ignore="MissingConstraints">
 
 
@@ -50,7 +50,7 @@
 
                     <EditText
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="58dp"
                         android:hint="@string/hintQ" />
                 </LinearLayout>
             </LinearLayout>
@@ -59,8 +59,8 @@
                 android:id="@+id/pregunta2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="5dp"
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@+id/pregunta1"
@@ -87,7 +87,7 @@
 
                     <EditText
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="62dp"
                         android:hint="@string/hintQ" />
                 </LinearLayout>
             </LinearLayout>
@@ -96,8 +96,8 @@
                 android:id="@+id/pregunta3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="5dp"
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@+id/pregunta2"
@@ -139,7 +139,7 @@
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/luigi"/>
+                            android:text="@string/luigi" />
                     </RadioGroup>
                 </LinearLayout>
             </LinearLayout>
@@ -148,10 +148,10 @@
                 android:id="@+id/pregunta4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="5dp"
+                android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@+id/pregunta3"
 
                 tools:ignore="MissingConstraints">
@@ -190,10 +190,10 @@
                 android:id="@+id/pregunta5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="5dp"
+                android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@+id/pregunta4"
 
                 tools:ignore="MissingConstraints">
@@ -219,75 +219,23 @@
 
                     <EditText
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="56dp"
                         android:hint="@string/hintQ" />
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/pregunta6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/pregunta5"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="16dp">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="50dp"
-                    android:contentDescription="@string/bulletDescription"
-                    android:src="@drawable/bowser_icon" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/pregunta6" />
-
-                    <RadioGroup
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Si" />
-
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="No" />
-                        </LinearLayout>
-
-                    </RadioGroup>
-                </LinearLayout>
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/envio"
-                android:layout_width="102dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="12dp"
-                android:text="Enviar"
-                app:layout_constraintTop_toBottomOf="@+id/pregunta6"
-                tools:layout_editor_absoluteX="282dp"
-                tools:ignore="MissingConstraints" />
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/envio"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Enviar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
