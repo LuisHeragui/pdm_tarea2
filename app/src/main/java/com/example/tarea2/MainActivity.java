@@ -34,10 +34,24 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        boolean verPantalla1 = true;
+        int pantalla = 1;
 
-        if (verPantalla1) {
+        if (pantalla == 1) {
             // Pantalla 1
+            setContentView(R.layout.formulario_pagina_1);
+
+
+        } else if (pantalla == 2) {
+            // Pantalla 2
+            setContentView(R.layout.formulario_pagina_2);
+
+            Spinner spinner = findViewById(R.id.hobby);
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                    R.array.hobbies_array, android.R.layout.simple_spinner_item);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner.setAdapter(adapter);
+        } else {
+            // Pantalla 3
             setContentView(R.layout.main_layout);
 
             mMenuSections = getResources().getStringArray(R.array.menu_items);
@@ -65,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
             // Set the drawer toggle as the DrawerListener
-            mDrawerLayout.setDrawerListener(mDrawerToggle);
+            mDrawerLayout.addDrawerListener(mDrawerToggle);
 
             this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             this.getSupportActionBar().setHomeButtonEnabled(true);
@@ -75,30 +89,32 @@ public class MainActivity extends AppCompatActivity {
                     R.array.hobbies_array, android.R.layout.simple_spinner_item);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(adapter);
-
-
-        } else {
-            // Pantalla 2
-            setContentView(R.layout.formulario_pagina_1);
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_main,menu);
+        getMenuInflater().inflate(R.menu.fstmenu,menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
-            Log.d("HomeActivity", "action_settings");
-            return true;
+        switch (id) {
+            case R.id.action_settings :
+                Log.d("HomeActivity", "action_settings");
+                return true;
+            case R.id.action_help :
+                Log.d("HomeActivity", "action_help");
+                return true;
+            case R.id.action_bug :
+                Log.d("HomeActivity", "action_bug");
+                return true;
+            case R.id.action_share :
+                Log.d("HomeActivity", "action_share");
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
