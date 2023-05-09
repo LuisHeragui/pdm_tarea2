@@ -32,10 +32,8 @@
     <string name="share">Compartir</string>
     
     <string-array name="menu_items">
-        <item>Sección 1</item>
-        <item>Sección 2</item>
-        <item>Sección 3</item>
-        <item>Sección 4</item>
-        <item>Sección 5</item>
+        <item>Ver más de Mario</item>
+        <item>Ver más de Bowser</item>
+        <item>Ver más de Peach</item>
     </string-array>
 </resources>

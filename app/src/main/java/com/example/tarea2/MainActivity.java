@@ -34,55 +34,15 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        int pantalla = 1;
+        boolean verPantalla1 = true;
 
-        if (pantalla == 1) {
+        if (verPantalla1) {
             // Pantalla 1
             setContentView(R.layout.formulario_pagina_1);
 
-
-        } else if (pantalla == 2) {
-            // Pantalla 2
-            setContentView(R.layout.formulario_pagina_2);
-
-            Spinner spinner = findViewById(R.id.hobby);
-            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                    R.array.hobbies_array, android.R.layout.simple_spinner_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner.setAdapter(adapter);
         } else {
-            // Pantalla 3
+            // Pantalla 2
             setContentView(R.layout.main_layout);
-
-            mMenuSections = getResources().getStringArray(R.array.menu_items);
-            mDrawerLayout = findViewById(R.id.drawer_layout);
-            mDrawerList = findViewById(R.id.left_drawer);
-
-            mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-                    R.layout.left_drawer, mMenuSections));
-
-            mDrawerToggle = new ActionBarDrawerToggle(
-                    this,
-                    mDrawerLayout,
-                    R.string.action_accept,
-                    R.string.action_cancel
-            ) {
-                public void onDrawerClosed(View view) {
-                    Log.d("HomeActivity", "onDrawerClosed");
-                }
-
-                public void onDrawerOpened(View drawerView) {
-                    Log.d("HomeActivity", "onDrawerOpened");
-                }
-            };
-
-            mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-
-            // Set the drawer toggle as the DrawerListener
-            mDrawerLayout.addDrawerListener(mDrawerToggle);
-
-            this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            this.getSupportActionBar().setHomeButtonEnabled(true);
 
             Spinner spinner = findViewById(R.id.hobby);
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -90,6 +50,36 @@ public class MainActivity extends AppCompatActivity {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(adapter);
         }
+
+        mMenuSections = getResources().getStringArray(R.array.menu_items);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        mDrawerList = findViewById(R.id.left_drawer);
+
+        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
+                R.layout.left_drawer, mMenuSections));
+
+        mDrawerToggle = new ActionBarDrawerToggle(
+                this,
+                mDrawerLayout,
+                R.string.action_accept,
+                R.string.action_cancel
+        ) {
+            public void onDrawerClosed(View view) {
+                Log.d("HomeActivity", "onDrawerClosed");
+            }
+
+            public void onDrawerOpened(View drawerView) {
+                Log.d("HomeActivity", "onDrawerOpened");
+            }
+        };
+
+        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
+        // Set the drawer toggle as the DrawerListener
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
+
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        this.getSupportActionBar().setHomeButtonEnabled(true);
     }
 
     @Override
@@ -100,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
         int id = item.getItemId();
 
         switch (id) {
