@@ -67,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
             // Set the drawer toggle as the DrawerListener
             mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-            getActionBar().setDisplayHomeAsUpEnabled(true);
-            getActionBar().setHomeButtonEnabled(true);
+            this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            this.getSupportActionBar().setHomeButtonEnabled(true);
 
             Spinner spinner = findViewById(R.id.hobby);
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
