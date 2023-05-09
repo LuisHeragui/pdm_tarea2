@@ -34,41 +34,41 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mMenuSections = getResources().getStringArray(R.array.menu_items);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerList = (ListView) findViewById(R.id.left_drawer);
-
-        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.left_drawer, mMenuSections));
-
-        mDrawerToggle = new ActionBarDrawerToggle(
-                this,
-                mDrawerLayout,
-                R.string.action_accept,
-                R.string.action_cancel
-        ) {
-            public void onDrawerClosed(View view) {
-                Log.d("HomeActivity", "onDrawerClosed");
-            }
-
-            public void onDrawerOpened(View drawerView) {
-                Log.d("HomeActivity", "onDrawerOpened");
-            }
-        };
-
-        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-
-        // Set the drawer toggle as the DrawerListener
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
-
         boolean verPantalla1 = true;
 
         if (verPantalla1) {
             // Pantalla 1
             setContentView(R.layout.main_layout);
+
+            mMenuSections = getResources().getStringArray(R.array.menu_items);
+            mDrawerLayout = findViewById(R.id.drawer_layout);
+            mDrawerList = findViewById(R.id.left_drawer);
+
+            mDrawerList.setAdapter(new ArrayAdapter<String>(this,
+                    R.layout.left_drawer, mMenuSections));
+
+            mDrawerToggle = new ActionBarDrawerToggle(
+                    this,
+                    mDrawerLayout,
+                    R.string.action_accept,
+                    R.string.action_cancel
+            ) {
+                public void onDrawerClosed(View view) {
+                    Log.d("HomeActivity", "onDrawerClosed");
+                }
+
+                public void onDrawerOpened(View drawerView) {
+                    Log.d("HomeActivity", "onDrawerOpened");
+                }
+            };
+
+            mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
+            // Set the drawer toggle as the DrawerListener
+            mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+            getActionBar().setHomeButtonEnabled(true);
 
             Spinner spinner = findViewById(R.id.hobby);
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
