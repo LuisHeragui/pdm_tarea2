@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String user = userNameField.getText().toString();
                 String phone = phoneField.getText().toString();
-                String hobby = hobbyField.getTransitionName();
+                String hobby = hobbyField.getSelectedItem().toString();
 
                 if (!(tyC.isChecked())){
                     Toast.makeText(getApplicationContext(), "Necesitas aceptar TyC", Toast.LENGTH_LONG).show();

@@ -1,6 +1,7 @@
 package com.example.tarea2;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,6 +22,11 @@ import android.widget.ToggleButton;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class QuestionsActivity extends AppCompatActivity {
 
@@ -119,8 +125,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
                     //Juntamos toda la información en Questionary
                     Questionary entry = new Questionary(user, phone, hobby, q1, q2, q3, q4, q5);
-
-                    Toast.makeText(getApplicationContext(), String.format("Gracias %s por Contestar la Encuesta :)", user), Toast.LENGTH_LONG).show();
+                    saveInfo(entry);
                 }
 
 
@@ -158,5 +163,37 @@ public class QuestionsActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void saveInfo(Questionary data) {
+        String FILENAME = "respuestas.txt";
+        String separator = "\n";
+        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream(new File(getFilesDir(), FILENAME));
+            fos.write(data.getName().getBytes());
+            fos.write(separator.getBytes());
+            fos.write(data.getPhone().getBytes());
+            fos.write(separator.getBytes());
+            fos.write(data.getHobby().getBytes());
+            fos.write(separator.getBytes());
+            fos.write(data.getQuestion1().getBytes());
+            fos.write(separator.getBytes());
+            fos.write(data.getQuestion2().getBytes());
+            fos.write(separator.getBytes());
+            fos.write(data.getQuestion3().getBytes());
+            fos.write(separator.getBytes());
+            fos.write(data.getQuestion4().getBytes());
+            fos.write(separator.getBytes());
+            fos.write(data.getQuestion5().getBytes());
+            fos.close();
+            Toast.makeText(getApplicationContext(),
+                    String.format("Gracias %s por Contestar la Encuesta :) \n Puedes encontrar tus respuestas en %s",
+                            data.getName(), getFilesDir().toString()), Toast.LENGTH_LONG).show();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
