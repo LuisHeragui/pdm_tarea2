@@ -6,8 +6,12 @@ import android.os.Parcelable;
 public class Questionary implements Parcelable {
     private String name;
     private String phone;
+    private String hobby;
     private String question1;
     private String question2;
+    private String question3;
+    private String question4;
+    private String question5;
 
     public String getName() {
         return name;
@@ -23,6 +27,14 @@ public class Questionary implements Parcelable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
     }
 
     public String getQuestion1() {
@@ -65,14 +77,12 @@ public class Questionary implements Parcelable {
         this.question5 = question5;
     }
 
-    private String question3;
-    private String question4;
-    private String question5;
 
-    public Questionary(String n, String t, String q1, String q2, String q3, String q4, String q5){
+    public Questionary(String n, String t, String h, String q1, String q2, String q3, String q4, String q5){
         super();
         this.name = n;
         this.phone = t;
+        this.hobby = h;
         this.question1 = q1;
         this.question2 = q2;
         this.question3 = q3;
@@ -83,6 +93,7 @@ public class Questionary implements Parcelable {
     public Questionary(Parcel source){
         this.name = source.readString();
         this.phone = source.readString();
+        this.hobby = source.readString();
         this.question1 = source.readString();
         this.question2 = source.readString();
         this.question3 = source.readString();
@@ -99,6 +110,7 @@ public class Questionary implements Parcelable {
     public void writeToParcel(Parcel d, int flags){
         d.writeString(name);
         d.writeString(phone);
+        d.writeString(hobby);
         d.writeString(question1);
         d.writeString(question2);
         d.writeString(question3);
